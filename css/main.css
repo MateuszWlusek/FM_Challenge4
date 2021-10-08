@@ -3,4 +3,151 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 10px;
+}
+
+body {
+  background-color: #c5e4e7;
+  font-family: "Space Mono", monospace;
+}
+
+.logo_container {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bill-title,
+.tip_select-title,
+.people-title {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #5e7a7d;
+  line-height: 2.4rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.bill-amount,
+.people-number {
+  width: 100%;
+  font-size: 2.4rem;
+  text-align: right;
+  padding: 0 1.5rem;
+  color: #00494d;
+  font-weight: 700;
+  border: none;
+}
+.bill-amount::placeholder,
+.people-number::placeholder {
+  color: #00494d;
+}
+
+.calc_container {
+  height: 85vh;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 2.5rem 2.5rem 0 0;
+  padding: 0 3rem;
+}
+.calc_container .calc_bill,
+.calc_container .people {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.calc_container .bill_zeroError,
+.calc_container .people-zeroError {
+  color: #e17456;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.calc_container .bill-amount {
+  background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 0.6rem;
+  background-color: #f4fafa;
+}
+.calc_container .buttons_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+.calc_container .buttons_container button,
+.calc_container .buttons_container input {
+  width: 48%;
+  height: 4rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  font-family: "Space Mono", monospace;
+  border-radius: 0.5rem;
+}
+.calc_container .buttons_container button {
+  background-color: #00494d;
+  border: none;
+  color: white;
+}
+.calc_container .buttons_container button:focus {
+  background-color: #26c0ab;
+  color: #00494d;
+}
+.calc_container .buttons_container input {
+  text-align: right;
+  border: none;
+  background-color: #f4fafa;
+  padding-right: 1.5rem;
+}
+.calc_container .buttons_container input::placeholder {
+  color: #5e7a7d;
+}
+.calc_container .people-number {
+  background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 0.6rem;
+  background-color: #f4fafa;
+}
+.calc_container .summary {
+  background-color: #00494d;
+  border-radius: 1.5rem;
+  padding: 2rem;
+}
+.calc_container .summary .tip_person,
+.calc_container .summary .total_person {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.calc_container .summary .person_line1,
+.calc_container .summary .total_line1 {
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+.calc_container .summary .person_line2,
+.calc_container .summary .total_line2 {
+  color: #7f9c9f;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+.calc_container .summary .person_tip,
+.calc_container .summary .total_price {
+  color: #26c0ab;
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+.calc_container .summary .reset_btn {
+  width: 100%;
+  height: 4rem;
+  background-color: #26c0ab;
+  border: none;
+  border-radius: 0.5rem;
+  color: #00494d;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 2rem;
 }

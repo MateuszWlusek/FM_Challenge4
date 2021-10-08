@@ -5,37 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FM_Challenge4 - Tip Calculator</title>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <img class='calc_logo' src="./assets/logo.svg" alt="Splitter Logo">
-    <div class="container">
+    <header class='logo_container'>
+        <img class='calc_logo' src="./assets/logo.svg" alt="Splitter Logo">
+    </header>
+    <div class="calc_container">
         <div class="calc_bill">
             <p class='bill-title'>Bill</p>
-            <input class='bill-amount' type="number" placeholder="0">
             <p class='bill_zeroError'></p>
+            <input class='bill-amount' type="number" placeholder="0">
         </div>
-        <div class='tip'>
-            <button class="tip5">5%</button>
-            <button class="tip10">10%</button>
-            <button class="tip15">15%</button>
-            <button class="tip25">25%</button>
-            <button class="tip50">50%</button>
-            <input class="tip_custom" type="number" placeholder="Custom">
+        <div class='select_tip'>
+            <p class='tip_select-title'>Select Tip %</p>
+            <div class="buttons_container">
+                <button class="tip5">5%</button>
+                <button class="tip10">10%</button>
+                <button class="tip15">15%</button>
+                <button class="tip25">25%</button>
+                <button class="tip50">50%</button>
+                <input class="tip_custom" type="number" placeholder="Custom"></div>
         </div>
         <div class="people">
             <p class="people-title">Number of People</p>
-            <input class='people-number' type="number" placeholder="0">
             <p class='people-zeroError'></p>
+            <input class='people-number' type="number" placeholder="0">
         </div>
         <div class="summary">
             <div class='tip_person'>
-                <p class='person_line1'>Tip Amount</p>
-                <p class='person_line2'>/ person</p>
+                <div class="tip_textbox">
+                    <p class='person_line1'>Tip Amount</p>
+                    <p class='person_line2'>/ person</p>
+                </div>
                 <p class='person_tip'>$0.00</p>
             </div>
             <div class="total_person">
-                <p class='total_line1'>Total</p>
-                <p class='total_line2'>/ person</p>
+                <div class="total_textbox">
+                    <p class='total_line1'>Total</p>
+                    <p class='total_line2'>/ person</p>
+                </div>
                 <p class='total_price'>$0.00</p>
             </div>
             <button class='reset_btn'>reset</button>
