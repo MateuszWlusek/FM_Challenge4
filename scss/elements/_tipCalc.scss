@@ -32,9 +32,19 @@ body {
     color: $bill_amount-txt-color;
     font-weight: 700;
     border: none;
+    border-radius: .5rem;
 
     @include tablet {
         height: 5rem;
+    }
+
+    @include desktop {
+        cursor: pointer;
+
+        &:focus {
+            outline: none !important;
+            border: 2px solid $bill_amount_desktopActive-border-color;
+        }
     }
 
     &::placeholder {
@@ -59,11 +69,22 @@ body {
         border-radius: 2.5rem;
     }
 
+    @include desktop {
+        width: 70%;
+        height: 60vh;
+        flex-wrap: wrap;
+        padding: 4rem 3rem;
+    }
+
     .calc_bill,
     .people {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @include desktop {
+            width: 45%;
+        }
     }
 
     .bill_zeroError,
@@ -78,62 +99,86 @@ body {
         background-color: $bill_amount-bg-color;
 
         @include tablet {
-            background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 2rem;
+            background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 1.7rem;
             background-color: $bill_amount-bg-color;
         }
     }
 
-    .buttons_container {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-
-        button,
-        input {
-            width: 48%;
-            height: 4rem;
-            font-size: 2.4rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            font-family: 'Space Mono', monospace;
-            border-radius: .5rem;
-
-            @include tablet {
-                height: 6rem;
-            }
+    .select_tip {
+        @include desktop {
+            width: 45%;
         }
 
-        button {
-            background-color: $tip_btn_notactive-bg-color;
-            border: none;
-            color: $tip_btn_notactive-txt-color;
+        .buttons_container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
 
-            &:focus {
-                background-color: $tip_btn_active-bg-color;
-                color: $tip_btn_active-txt-color;
+            button,
+            input {
+                width: 48%;
+                height: 4rem;
+                font-size: 2.4rem;
+                font-weight: 700;
+                margin: 1rem 0;
+                font-family: 'Space Mono', monospace;
+                border-radius: .5rem;
+
+                @include tablet {
+                    height: 6rem;
+                }
+
+                @include desktop {
+                    width: 30%;
+                    cursor: pointer;
+                }
             }
-        }
 
-        input {
-            text-align: right;
-            border: none;
-            background-color: $tip_custom-bg-color;
-            padding-right: 1.5rem;
+            button {
+                background-color: $tip_btn_notactive-bg-color;
+                border: none;
+                color: $tip_btn_notactive-txt-color;
 
-            &::placeholder {
-                color: $tip_custom_placeholder-txt-color;
+                &:focus {
+                    background-color: $tip_btn_active-bg-color;
+                    color: $tip_btn_active-txt-color;
+                }
+
+                @include desktop {
+                    &:hover {
+                        background-color: $tip_btn_desktopnotactive_hover-bg-color;
+                        color: $tip_btn_desktopnotactive_hover-txt-color;
+                    }
+                }
+            }
+
+            input {
+                text-align: right;
+                border: none;
+                background-color: $tip_custom-bg-color;
+                padding-right: 1.5rem;
+
+                &::placeholder {
+                    color: $tip_custom_placeholder-txt-color;
+                }
+
+                &:focus {
+                    outline: none !important;
+                    border: 2px solid $tip_custom_desktop_focus-border-color;
+                }
             }
         }
     }
+
 
     .people-number {
         background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem .6rem;
         background-color: $people_number-bg-color;
 
         @include tablet {
-            background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 2rem;
+            background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 1.7rem;
             background-color: $people_number-bg-color;
         }
     }
@@ -143,11 +188,21 @@ body {
         border-radius: 1.5rem;
         padding: 2rem;
 
+        @include desktop {
+            height: 100%;
+            width: 45%;
+            padding: 4rem;
+        }
+
         .tip_person,
         .total_person {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            @include desktop {
+                margin: 3rem 0;
+            }
         }
 
         .person_line1,
@@ -169,6 +224,10 @@ body {
             color: $summary_tip_total_price-txt-color;
             font-size: 3.2rem;
             font-weight: 700;
+
+            @include desktop {
+                font-size: 4.8rem;
+            }
         }
 
         .reset_btn {
@@ -182,6 +241,11 @@ body {
             font-weight: 700;
             text-transform: uppercase;
             margin-top: 2rem;
+
+            @include desktop {
+                margin-top: 15rem;
+                cursor: pointer;
+            }
         }
     }
 }
