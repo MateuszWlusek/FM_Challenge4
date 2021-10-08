@@ -48,6 +48,19 @@ peopleNumber.addEventListener('change', function () {
     }
 })
 
+billAmount.addEventListener('change', function () {
+    if (billAmount.value != 0) {
+        resetBtn.disabled = false;
+        resetBtn.classList.remove('noActive');
+        resetBtn.classList.add('active');
+        resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)';
+    } else {
+        resetBtn.disabled = true;
+        resetBtn.classList.remove('active');
+        resetBtn.classList.add('noActive');
+        resetBtn.style.backgroundColor = 'hsl(183, 78%, 24%)';
+    }
+})
 tipButtons.forEach(function (btn) {
     btn.addEventListener('click', function (e) {
         e.preventDefault();
@@ -123,6 +136,6 @@ resetBtn.addEventListener('mouseover', function () {
 
 resetBtn.addEventListener('mouseout', function () {
     if (resetBtn.classList.contains('active')) {
-        resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)';
+        resetBtn.style.backgroundColor = 'hsl(173, 61%, 77%)';
     }
 })
