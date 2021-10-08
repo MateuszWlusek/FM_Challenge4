@@ -39,11 +39,23 @@ body {
   color: #00494d;
   font-weight: 700;
   border: none;
+  border-radius: 0.5rem;
 }
 @media screen and (min-width: 768px) {
   .bill-amount,
 .people-number {
     height: 5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .bill-amount,
+.people-number {
+    cursor: pointer;
+  }
+  .bill-amount:focus,
+.people-number:focus {
+    outline: none !important;
+    border: 2px solid #26c0ab;
   }
 }
 .bill-amount::placeholder,
@@ -69,11 +81,25 @@ body {
     border-radius: 2.5rem;
   }
 }
+@media screen and (min-width: 1440px) {
+  .calc_container {
+    width: 70%;
+    height: 60vh;
+    flex-wrap: wrap;
+    padding: 4rem 3rem;
+  }
+}
 .calc_container .calc_bill,
 .calc_container .people {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+@media screen and (min-width: 1440px) {
+  .calc_container .calc_bill,
+.calc_container .people {
+    width: 45%;
+  }
 }
 .calc_container .bill_zeroError,
 .calc_container .people-zeroError {
@@ -87,19 +113,24 @@ body {
 }
 @media screen and (min-width: 768px) {
   .calc_container .bill-amount {
-    background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 2rem;
+    background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 1.7rem;
     background-color: #f4fafa;
   }
 }
-.calc_container .buttons_container {
+@media screen and (min-width: 1440px) {
+  .calc_container .select_tip {
+    width: 45%;
+  }
+}
+.calc_container .select_tip .buttons_container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
 }
-.calc_container .buttons_container button,
-.calc_container .buttons_container input {
+.calc_container .select_tip .buttons_container button,
+.calc_container .select_tip .buttons_container input {
   width: 48%;
   height: 4rem;
   font-size: 2.4rem;
@@ -109,28 +140,45 @@ body {
   border-radius: 0.5rem;
 }
 @media screen and (min-width: 768px) {
-  .calc_container .buttons_container button,
-.calc_container .buttons_container input {
+  .calc_container .select_tip .buttons_container button,
+.calc_container .select_tip .buttons_container input {
     height: 6rem;
   }
 }
-.calc_container .buttons_container button {
+@media screen and (min-width: 1440px) {
+  .calc_container .select_tip .buttons_container button,
+.calc_container .select_tip .buttons_container input {
+    width: 30%;
+    cursor: pointer;
+  }
+}
+.calc_container .select_tip .buttons_container button {
   background-color: #00494d;
   border: none;
   color: white;
 }
-.calc_container .buttons_container button:focus {
+.calc_container .select_tip .buttons_container button:focus {
   background-color: #26c0ab;
   color: #00494d;
 }
-.calc_container .buttons_container input {
+@media screen and (min-width: 1440px) {
+  .calc_container .select_tip .buttons_container button:hover {
+    background-color: #a1e8e0;
+    color: #00494d;
+  }
+}
+.calc_container .select_tip .buttons_container input {
   text-align: right;
   border: none;
   background-color: #f4fafa;
   padding-right: 1.5rem;
 }
-.calc_container .buttons_container input::placeholder {
+.calc_container .select_tip .buttons_container input::placeholder {
   color: #5e7a7d;
+}
+.calc_container .select_tip .buttons_container input:focus {
+  outline: none !important;
+  border: 2px solid #26c0ab;
 }
 .calc_container .people-number {
   background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 0.6rem;
@@ -138,7 +186,7 @@ body {
 }
 @media screen and (min-width: 768px) {
   .calc_container .people-number {
-    background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 2rem;
+    background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 1.7rem;
     background-color: #f4fafa;
   }
 }
@@ -147,11 +195,24 @@ body {
   border-radius: 1.5rem;
   padding: 2rem;
 }
+@media screen and (min-width: 1440px) {
+  .calc_container .summary {
+    height: 100%;
+    width: 45%;
+    padding: 4rem;
+  }
+}
 .calc_container .summary .tip_person,
 .calc_container .summary .total_person {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media screen and (min-width: 1440px) {
+  .calc_container .summary .tip_person,
+.calc_container .summary .total_person {
+    margin: 3rem 0;
+  }
 }
 .calc_container .summary .person_line1,
 .calc_container .summary .total_line1 {
@@ -171,6 +232,12 @@ body {
   font-size: 3.2rem;
   font-weight: 700;
 }
+@media screen and (min-width: 1440px) {
+  .calc_container .summary .person_tip,
+.calc_container .summary .total_price {
+    font-size: 4.8rem;
+  }
+}
 .calc_container .summary .reset_btn {
   width: 100%;
   height: 4rem;
@@ -182,4 +249,10 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin-top: 2rem;
+}
+@media screen and (min-width: 1440px) {
+  .calc_container .summary .reset_btn {
+    margin-top: 15rem;
+    cursor: pointer;
+  }
 }
