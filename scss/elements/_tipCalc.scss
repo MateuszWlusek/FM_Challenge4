@@ -9,6 +9,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .bill-title,
@@ -32,6 +33,10 @@ body {
     font-weight: 700;
     border: none;
 
+    @include tablet {
+        height: 5rem;
+    }
+
     &::placeholder {
         color: $bill_amount-txt-color;
     }
@@ -46,6 +51,13 @@ body {
     justify-content: space-around;
     border-radius: 2.5rem 2.5rem 0 0;
     padding: 0 3rem;
+
+    @include tablet {
+        width: 80%;
+        margin: 0 auto;
+        height: 75vh;
+        border-radius: 2.5rem;
+    }
 
     .calc_bill,
     .people {
@@ -64,9 +76,12 @@ body {
     .bill-amount {
         background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem .6rem;
         background-color: $bill_amount-bg-color;
+
+        @include tablet {
+            background: url(../assets/icon-dollar.svg) no-repeat scroll 1.5rem 2rem;
+            background-color: $bill_amount-bg-color;
+        }
     }
-
-
 
     .buttons_container {
         display: flex;
@@ -84,6 +99,10 @@ body {
             margin: 1rem 0;
             font-family: 'Space Mono', monospace;
             border-radius: .5rem;
+
+            @include tablet {
+                height: 6rem;
+            }
         }
 
         button {
@@ -112,6 +131,11 @@ body {
     .people-number {
         background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem .6rem;
         background-color: $people_number-bg-color;
+
+        @include tablet {
+            background: url(../assets/icon-person.svg) no-repeat scroll 1.5rem 2rem;
+            background-color: $people_number-bg-color;
+        }
     }
 
     .summary {
