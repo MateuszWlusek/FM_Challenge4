@@ -35,7 +35,7 @@ window.addEventListener('resize', function () {
 })
 
 peopleNumber.addEventListener('change', function () {
-    if (peopleNumber.value != 0) {
+    if (peopleNumber.value != 0 || billAmount.value != 0) {
         resetBtn.disabled = false;
         resetBtn.classList.remove('noActive');
         resetBtn.classList.add('active');
@@ -46,10 +46,14 @@ peopleNumber.addEventListener('change', function () {
         resetBtn.classList.add('noActive');
         resetBtn.style.backgroundColor = 'hsl(183, 78%, 24%)';
     }
+
+    if (peopleNumber.value != 0) {
+        peopleNumber.style.border = 'none';
+    }
 })
 
 billAmount.addEventListener('change', function () {
-    if (billAmount.value != 0) {
+    if (billAmount.value != 0 || peopleNumber.value != 0) {
         resetBtn.disabled = false;
         resetBtn.classList.remove('noActive');
         resetBtn.classList.add('active');
@@ -59,6 +63,10 @@ billAmount.addEventListener('change', function () {
         resetBtn.classList.remove('active');
         resetBtn.classList.add('noActive');
         resetBtn.style.backgroundColor = 'hsl(183, 78%, 24%)';
+    }
+
+    if (billAmount.value != 0) {
+        billAmount.style.border = 'none';
     }
 })
 tipButtons.forEach(function (btn) {
@@ -72,17 +80,24 @@ tipButtons.forEach(function (btn) {
             personTip.innerText = '$0.00';
             personTotal.innerText = '$0.00';
             customTip.value = '';
-        } else if (billAmount.value <= 0 && !peopleNumber.value <= 0) {
+            peopleNumber.style.outline = 'none !important';
+            peopleNumber.style.border = '2px solid hsl(13, 70%, 61%)';
+            billAmount.style.outline = 'none !important';
+            billAmount.style.border = '2px solid hsl(13, 70%, 61%)';
+        } else if (billAmount.value <= 0) {
             zeroBillError.innerText = "Can't be 0$ or less";
             personTip.innerText = '$0.00';
             personTotal.innerText = '$0.00';
             customTip.value = '';
-        } else if (peopleNumber.value <= 0 && !billAmount.value <= 0) {
+            billAmount.style.outline = 'none !important';
+            billAmount.style.border = '2px solid hsl(13, 70%, 61%)';
+        } else if (peopleNumber.value <= 0) {
             zeroPeopleError.innerText = "Can't be 0 or less";
             personTip.innerText = '$0.00';
             personTotal.innerText = '$0.00';
             customTip.value = '';
-            peopleNumber.style.color = 'red';
+            peopleNumber.style.outline = 'none !important';
+            peopleNumber.style.border = '2px solid hsl(13, 70%, 61%)';
         } else {
             customTip.value = '';
             personTipCost = parseFloat(billAmount.value) * (parseFloat(this.innerText) / 100) / peopleNumber.value;
@@ -102,15 +117,22 @@ customTip.addEventListener('change', function (e) {
         zeroPeopleError.innerText = "Can't be 0 or less";
         personTip.innerText = '$0.00';
         personTotal.innerText = '$0.00';
-    } else if (billAmount.value <= 0 && !peopleNumber.value <= 0) {
+        peopleNumber.style.outline = 'none !important';
+        peopleNumber.style.border = '2px solid hsl(13, 70%, 61%)';
+        billAmount.style.outline = 'none !important';
+        billAmount.style.border = '2px solid hsl(13, 70%, 61%)';
+    } else if (billAmount.value <= 0) {
         zeroBillError.innerText = "Can't be 0$ or less";
         personTip.innerText = '$0.00';
         personTotal.innerText = '$0.00';
-
-    } else if (peopleNumber.value <= 0 && !billAmount.value <= 0) {
+        billAmount.style.outline = 'none !important';
+        billAmount.style.border = '2px solid hsl(13, 70%, 61%)';
+    } else if (peopleNumber.value <= 0) {
         zeroPeopleError.innerText = "Can't be 0 or less";
         personTip.innerText = '$0.00';
         personTotal.innerText = '$0.00';
+        peopleNumber.style.outline = 'none !important';
+        peopleNumber.style.border = '2px solid hsl(13, 70%, 61%)';
     } else {
         personTipCost = parseFloat(billAmount.value) * (parseFloat(this.value) / 100) / peopleNumber.value;
         personTotalCost = parseFloat(billAmount.value) / peopleNumber.value + personTipCost;
@@ -126,6 +148,10 @@ resetBtn.addEventListener('click', function (e) {
     personTip.innerText = '$0.00';
     personTotal.innerText = '$0.00';
     customTip.value = '';
+    resetBtn.disabled = true;
+    resetBtn.classList.remove('active');
+    resetBtn.classList.add('noActive');
+    resetBtn.style.backgroundColor = 'hsl(183, 78%, 24%)';
 })
 
 resetBtn.addEventListener('mouseover', function () {
@@ -136,6 +162,6 @@ resetBtn.addEventListener('mouseover', function () {
 
 resetBtn.addEventListener('mouseout', function () {
     if (resetBtn.classList.contains('active')) {
-        resetBtn.style.backgroundColor = 'hsl(173, 61%, 77%)';
+        resetBtn.style.backgroundColor = 'hsl(172, 67%, 45%)';
     }
 })
